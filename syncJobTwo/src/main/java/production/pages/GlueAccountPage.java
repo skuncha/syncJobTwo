@@ -69,7 +69,7 @@ public void CCIMailIntegration(String num) {
 		if (filePath.isFile()) {
 			System.out.println("\n");
 			System.out
-					.println("         OREDRS THAT ARE SUCCESSFULLY CREATED ARE ");
+					.println("         PLEASE SEE STATUS OF CUSTOMER ACCOUNTS SYNC DETAILS ");
 			String file = filePath.getAbsolutePath();
 			CSVTestDataSource testDataSrc = new CSVTestDataSource(file);
 			waitFor(5).seconds();
