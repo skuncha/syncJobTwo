@@ -12,6 +12,8 @@ import net.thucydides.core.pages.PageObject;
 import net.thucydides.core.pages.WebElementFacade;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * @author srinivasa.kuncha
@@ -58,7 +60,7 @@ public void CCIMailIntegration(String num) {
     	System.out.print("                    " + num);
     		waitFor(4).seconds();
     	getDriver().switchTo().alert().accept(); 
-			waitFor(16).seconds();
+			waitFor(25).seconds();
 		System.out.println("   :  " +getDriver().switchTo().alert().getText());
 		getDriver().switchTo().alert().accept();
 			waitFor(5).seconds();
@@ -79,14 +81,20 @@ public void CCIMailIntegration(String num) {
 					String clinetuniqueID = record.get("uniqueID");
 					String clientURL = url.concat(clinetuniqueID);
 					getDriver().get(clientURL);
-					waitFor(5).seconds();
+					waitFor(8).seconds();
 					Thucydides.takeScreenshot();
 					CCIMailIntegration(rowNum);
 				} catch (Exception e) {
 					System.out.println("                       " + rowNum +"   : ---> SORRY, Please try again (Latency Issue)");
 				}
+				try {
+			    	 WebDriverWait wait1 = new WebDriverWait(getDriver(), 3);
+			    	 if(wait1.until(ExpectedConditions.alertIsPresent())!=null)
+			    	      getDriver().switchTo().alert().accept();
+			    	 }
+			    	 catch (Exception x) {}
 			}
 		}
-		System.out.println("\n");
+		
 	}
 }
