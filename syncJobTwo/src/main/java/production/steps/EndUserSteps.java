@@ -2,8 +2,9 @@ package production.steps;
 
 import java.io.IOException;
 
+import production.pages.DailyMailAccountPage;
 import net.thucydides.core.steps.ScenarioSteps;
-import production.pages.GlueAccountPage;
+
 
 /**
  * @author srinivasa.kuncha
@@ -11,7 +12,7 @@ import production.pages.GlueAccountPage;
  */
 public class EndUserSteps extends ScenarioSteps {
 
-    GlueAccountPage dictionaryPage;
+    DailyMailAccountPage dictionaryPage;
 
         public void supplyLoginCredientials(String username, String password){
     	dictionaryPage.supplyLogin_Credientials(username, password);
@@ -28,7 +29,6 @@ public class EndUserSteps extends ScenarioSteps {
     }
     
     public void verfiyOrdersuccessfullyPlaced(){
-    
-    	System.out.println("           XXXXXXXXXXXXXXX             TEST RUN COMPLETED     XXXXXXXXXXXXXXXX           ");
+    	System.out.println("           XXXXXXXXXXXXXXX             ORDERS PLACED SUCCESSFULLY       XXXXXXXXXXXXXXXX           ");
     }
 }
