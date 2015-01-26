@@ -23,12 +23,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 //@DefaultUrl("http://test.salesforce.com")
 
-@DefaultUrl("https://eu1.salesforce.com/")
+@DefaultUrl("https://test.salesforce.com/")
 
 public class DailyMailAccountPage extends PageObject {
 	
 	long timeNow = System.currentTimeMillis();
-	String url = "https://eu1.salesforce.com/";
+	String url = "https://dmgsalescloud--systest.cs7.my.salesforce.com/";
 		
 //	https://cs14.salesforce.com/
 	
