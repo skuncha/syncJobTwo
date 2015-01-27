@@ -263,7 +263,10 @@ public class DailyMailAccountPage extends PageObject {
 											}
 								 }
 										waitFor(2).seconds();
-								try
+										
+											
+									
+								/*try
 								{	
 									searchContact().type(record.get("customerContact"));
 									clickNext().click();
@@ -275,7 +278,9 @@ public class DailyMailAccountPage extends PageObject {
 									{
 									contactSelection().selectByVisibleText(record.get("customerContact"));
 										waitFor(1).second();
-									}
+									}*/
+							contactSelection().selectByVisibleText(record.get("customerContact"));
+							waitFor(1).second();
 							clickNext().click();
 								waitFor(1).seconds();
 							finish().click();
@@ -456,6 +461,7 @@ public class DailyMailAccountPage extends PageObject {
 						    	 waitFor(6).seconds();
 								 noOfInserts().type(record.get("numberOfInserts"));
 								 waitFor(1).seconds();
+								 Thucydides.takeScreenshot();
 							 }
 					    	 
 		/************************************ Supply Price Details ******************************************/
@@ -485,6 +491,7 @@ public class DailyMailAccountPage extends PageObject {
 					    		 waitFor(2).seconds();
 					    		 updateRevenueDMI().click();
 					    		 waitFor(4).seconds();
+					    		 Thucydides.takeScreenshot();
 					    	 }
 		/************************************ Accept Order *************************************************/	
 					    	 System.out.println("       " +rowNum + " . " + " Order ID : " +order );	
