@@ -28,7 +28,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class DailyMailAccountPage extends PageObject {
 	
 	long timeNow = System.currentTimeMillis();
-	String url = "https://dmgsalescloud--systest.cs7.my.salesforce.com/";
+//	String url = "https://dmgsalescloud--systest.cs7.my.salesforce.com/";
+	
+	String url = "https://dmgsalescloud--devsales.cs14.my.salesforce.com/";
+	
 		
 //	https://cs14.salesforce.com/
 	
@@ -56,7 +59,6 @@ public class DailyMailAccountPage extends PageObject {
 	private WebElementFacade selectBillingAgency() 	{ return element(By.id("j_id0:j_id1:i:f:pb:d:BillingAgencies.input"));							}
 	private WebElementFacade contactSelection()     { return element(By.xpath("//*[@id='j_id0:j_id1:i:f:pb:d:Contact.input']")); 					}
 	private WebElementFacade searchContact()     	{ 	return element(By.id("j_id0:j_id1:i:f:pb:d:Prompt_Contact_Name.input")); 					}
-	private WebElementFacade selectAnyContact()     { return element(By.xpath("//*[@id='j_id0:j_id1:i:f:pb:d:Contact.input']/option[2]")); 			}
 	private WebElementFacade finish() 				{ return element(By.id("j_id0:j_id1:i:f:pb:pbb:bottom:finish"));								}
 	private WebElementFacade orderStatus()   		{ return element(By.id("Order.Identification:order.statusCode"));								}
 	private WebElementFacade orderPurchaseNo()   	{ return element(By.id("Order.Identification:order.purchaseOrderNo"));							}
@@ -67,7 +69,7 @@ public class DailyMailAccountPage extends PageObject {
     private WebElementFacade orderSTInput()			{ return element(By.xpath("//*[@id='salesforce-plugin']/div[2]/div/div/form/div[2]/div/table/thead/tr[2]/th[1]/input")); 	}
     private WebElementFacade orderSTselect()			{ return element(By.xpath("//*[@id='salesforce-plugin']/div[2]/div/div/form/div[2]/div/table/tbody/tr/td[1]/span")); 	}
 //    private WebElementFacade addPackage()   	 	{ return element(By.xpath("//h4/a/span/input"));												}
-    private WebElementFacade addPackage()   	 	{ return element(By.xpath("//h4/a/span[1]/input"));												}
+    private WebElementFacade addPackage()   	 	{ return element(By.xpath("//fieldset/div/div/div/h4/a/span"));									}
     private WebElementFacade title() 			 	{ return element(By.id("Order.Schedule:sched.titleCode"));										}
     private WebElementFacade selectPublication() 	{ return element(By.id("Order.Schedule:sched.publicationCode"));								}
     private WebElementFacade webSiteCategory()   	{ return element(By.id("Order.Schedule:sched.webSiteCategoryCode"));							}
@@ -75,14 +77,14 @@ public class DailyMailAccountPage extends PageObject {
     private WebElementFacade webSite()   		 	{ return element(By.id("Order.Schedule:sched.webSiteCode"));									}
     private WebElementFacade selectSubSection()  	{ return element(By.id("Order.Schedule:sched.subSectionCode"));									}
     private WebElementFacade selectZone()   	 	{ return element(By.id("Order.Schedule:"));														}
-    private WebElementFacade distribution()   	 	{ return element(By.id("rder.Schedule:sched.distributionCode"));								}
+    private WebElementFacade distribution()   	 	{ return element(By.id("Order.Schedule:sched.distributionCode"));								}
     private WebElementFacade noOfInserts()   	 	{ return element(By.id("Order.Schedule:sched.noOfInserts"));									}
-    private WebElementFacade saveOrder()   	     	{ return element(By.xpath("//nav[button='Save']/button[2]"));									}
+//    private WebElementFacade saveOrder()   	     	{ return element(By.xpath("//nav[button='Save']/button[2]"));									}
     private WebElementFacade selectModule()   	 	{ return element(By.id("Order.Schedule.Material:material.moduleCode"));							}
     private WebElementFacade productionNote()   	{ return element(By.id("Order.Schedule.Material:material.productionNote"));						}
     private WebElementFacade ABCopySplit()			{ return element(By.id(":propval.propertyBoolValue"));											}
     private WebElementFacade regionalCopySplit()   	{ return element(By.id("Order.Properties:Regional Copy Split"));								}
-    private WebElementFacade spreadAd()   			{ return element(By.id("Order.Schedule.Material:material.isSpreadAd"));							}
+//    private WebElementFacade spreadAd()   			{ return element(By.id("Order.Schedule.Material:material.isSpreadAd"));							}
     private WebElementFacade color()   				{ return element(By.id("Order.Schedule.Material:material.bookedCMYKColors"));					}
     private WebElementFacade pageRequest()   		{ return element(By.id("Order.Schedule:schedule.pageRequest"));									}
     private WebElementFacade nextMonth()   	 	 	{ return element(By.xpath("//thead/tr[1]/th/span[4]/span[3]/i"));								}
@@ -93,6 +95,24 @@ public class DailyMailAccountPage extends PageObject {
     private WebElementFacade orderID()      	 	{ return element(By.xpath(".//*[@id='SchedulingAccordion']/div/div[1]/div[2]/div/div[2]/fieldset/div[1]/div/p")); }
     private WebElementFacade selectHeight()     	{ return element(By.xpath("//*[@id='Order.Schedule.Material:material.bookedHeight']"));			}
     private WebElementFacade selectWidth()     		{ return element(By.xpath("//*[@id='Order.Schedule.Material:material.bookedWidth']"));			}
+    private WebElementFacade selectInsertion()   { return element(By.xpath("//*[@id='ActivePriceDetailView']/label[3]"));							}
+    
+    /******DM DISPLAY and TMOS *****/
+    private WebElementFacade selectBasePrice()	 { return element(By.xpath("//tbody/tr[14]/td[1]/a"));												}
+    private WebElementFacade supplyPriceType()	 { return element(By.xpath("//*[@id=':overridePriceDetail']"));										}
+    private WebElementFacade supplyPrice()		 { return element(By.xpath("//tbody/tr[23]/td[3]/div/input"));										}
+    private WebElementFacade updateInsLevelRevenue() { return element(By.xpath("//tbody/tr[23]/td[3]/div/span/button/i"));							}
+    /******     MAILPLUS      *****/
+    private WebElementFacade insertionDateMP()   { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/table/thead/tr/th[1]/a"));			}
+    private WebElementFacade selectBasePriceMP() { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/div/table/tbody/tr[9]/td[1]/a"));	}
+    private WebElementFacade supplyPriceMP()	 { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/div/table/tbody/tr[18]/td[3]/div/input"));	}
+    private WebElementFacade updateRevenueMP()   { return element(By.xpath("//tbody/tr[18]/td[3]/div/span/button/i"));							    }
+    /******DAILY MAIL INSERTS*****/
+    private WebElementFacade insertionDateDMI()  { return element(By.xpath("//fieldset/div[2]/div/div/div[3]/div/table/thead/tr/th[1]/a"));		    }
+    private WebElementFacade selectBasePriceDMI(){ return element(By.xpath("//fieldset/div[2]/div/div/div[3]/div/div/table/tbody/tr[2]/td[1]/a"));	}
+    private WebElementFacade supplyPriceDMI()	 { return element(By.xpath("//tbody/tr[3]/td[3]/div/input"));										}
+    private WebElementFacade updateRevenueDMI()  { return element(By.xpath("//tbody/tr[3]/td[3]/div/span/button/i"));							    }
+    /******Order level Price *****/
    
     public void supplyLogin_Credientials(String username, String password) {
     		waitFor(3).seconds();
@@ -208,18 +228,20 @@ public class DailyMailAccountPage extends PageObject {
 								if (str.equalsIgnoreCase("Direct Advertiser")|| str.equalsIgnoreCase("Charity")) 
 								 {
 											String billingType = record.get("billingSelection");
+											
 											if (billingType.equalsIgnoreCase("Direct"))
 											{
 												billingSelection().selectByVisibleText(billingType);
 													waitFor(1).second();
 												clickNext().click();
 											}
-											else 
-											{
-												billingSelection().selectByVisibleText(billingType);
-													waitFor(1).second();
-												clickNext().click();
-													String selectionType = record.get("agencyType");
+												else 
+												{
+													billingSelection().selectByVisibleText(billingType);
+														waitFor(1).second();
+													clickNext().click();
+														String selectionType = record.get("agencyType");
+													
 													if (selectionType.equalsIgnoreCase("Booking Agency"))
 													{
 															waitFor(2).second();
@@ -232,15 +254,15 @@ public class DailyMailAccountPage extends PageObject {
 														clickNext().click();
 															waitFor(2).second();
 													}
-													else 
-													{ 
-														billingRef().selectByVisibleText(record.get("billingAgency"));
-															waitFor(1).second();
-														clickNext().click();
-													}
+														else 
+														{ 
+															billingRef().selectByVisibleText(record.get("billingAgency"));
+																waitFor(1).second();
+															clickNext().click();
+														}
 											}
 								 }
-								waitFor(2).seconds();
+										waitFor(2).seconds();
 								try
 								{	
 									searchContact().type(record.get("customerContact"));
@@ -257,8 +279,9 @@ public class DailyMailAccountPage extends PageObject {
 							clickNext().click();
 								waitFor(1).seconds();
 							finish().click();
+							
 		/************** Launch OrderPlugin and Create Order*************************************************/	
-							 	 waitFor(12).seconds();
+							 	 waitFor(13).seconds();
 					     	 	 String sourceURL =getDriver().findElement(By.xpath("//*[@id='j_id0:j_id8']/div[2]/iframe")).getAttribute("src");
 					     	 	 String[] firstsplit = sourceURL.split("authorizationcode=");
 					     	 	 String[] secondpartsplit = firstsplit[1].split("\\&clientid=");
@@ -266,12 +289,34 @@ public class DailyMailAccountPage extends PageObject {
 								 String add = "&clientid=";
 								 acode =record.get("authCode");
 								 String date = record.get("addDate");
-								 /*String sampleURL = "https://pre-prod.cci-webaccess-dmgmedia.co.uk/salesforce/plugin/orders/create?userid=srinivasa.kuncha&group=Mail Display Sales&profile=MD Manager&accountid=";*/ 
-								 String redirect = "&bookings=[{\"packagename\":\"DM Display\",\"dates\":[\""+ date + "\"]}]";
-//								 String redirect = "&bookings=[{\"packagename\":\"MailPlus\",\"dates\":[\""+ date + "\"]}]";
-								 String OrderURL=firstsplit[0].concat(acode).concat(add).concat(secondpartsplit[1]).concat(redirect);
-								 getDriver().get(OrderURL);
-								 waitFor(11).seconds();
+								 String redirectDM = "&bookings=[{\"packagename\":\"DM Display\",\"dates\":[\""+ date + "\"]}]";
+								 String redirectTMOS = "&bookings=[{\"packagename\":\"TMOS Display\",\"dates\":[\""+ date + "\"]}]";
+								 String redirectMDI = "&bookings=[{\"packagename\":\"Mail Display Inserts\",\"dates\":[\""+ date + "\"]}]";
+								 String redirectMP = "&bookings=[{\"packagename\":\"MailPlus\",\"dates\":[\""+ date + "\"]}]";
+								 String Package = record.get("package");
+								 
+								 if(Package.equalsIgnoreCase("DM Display"))
+								 {
+									 String OrderURL=firstsplit[0].concat(acode).concat(add).concat(secondpartsplit[1]).concat(redirectDM);
+									 getDriver().get(OrderURL);
+								 }
+								 if(Package.equalsIgnoreCase("TMOS Display"))
+								 {
+									 String OrderURL=firstsplit[0].concat(acode).concat(add).concat(secondpartsplit[1]).concat(redirectTMOS);
+									 getDriver().get(OrderURL);
+								 }
+								 if(Package.equalsIgnoreCase("Mail Display Inserts"))
+								 {
+									 String OrderURL=firstsplit[0].concat(acode).concat(add).concat(secondpartsplit[1]).concat(redirectMDI);
+									 getDriver().get(OrderURL);
+								 }
+								 if(Package.equalsIgnoreCase("MailPlus"))
+								 {
+									 String OrderURL=firstsplit[0].concat(acode).concat(add).concat(secondpartsplit[1]).concat(redirectMP);
+									 getDriver().get(OrderURL);
+								 }
+								 waitFor(13).seconds();
+								 
 		/************************************ Supply Order Details ******************************************/
 					    	 orderPurchaseNo().sendKeys(record.get("PONumber"));
 					    	 orderNote().sendKeys(record.get("orderNote"));
@@ -294,107 +339,153 @@ public class DailyMailAccountPage extends PageObject {
 					    	 Thucydides.takeScreenshot();
 		/************************************ Supply Package Details*****************************************/
 					    	 addPackage().click();  	
-					    	 		waitFor(4).seconds();
-					    	 addPackage().click(); 
-					    	 		waitFor(4).seconds();
-						     selectPublication().selectByVisibleText(record.get("publication"));
-						    	 	waitFor(2).seconds();
-						     selectSection().selectByVisibleText(record.get("section"));
-						    	 	waitFor(4).seconds();
-						     selectZone().selectByVisibleText(record.get("zones"));
-						    	 	waitFor(4).seconds();
-						     selectSubSection().selectByVisibleText(record.get("subsection"));
-						    		waitFor(5).seconds();
-							 String colour = record.get("colour");	 	
-									 if (colour.equals("M"))
-									 {
-										 color().click();
-										 waitFor(3).seconds();
-									 }
-							String salesmodule = record.get("module");
-							
-							if (!"".equals(salesmodule))
-				    	 	{
-						     selectModule().selectByVisibleText(record.get("module"));
-							    	waitFor(4).seconds();
-				    	 	}
-							else
-							{
-								selectHeight().sendKeys(record.get("height"));
-								waitFor(4).seconds();
-								selectWidth().clear();
-								waitFor(2).seconds();
-								selectWidth().typeAndEnter(record.get("width"));
-								waitFor(4).seconds();
-							}
-							 String zoneType = record.get("zones");
-							 		    rcs = record.get("regionalCopySplit");
-							 		   /*rcs = rcs.replace('/', '\\');
-							 		   System.out.println("the values that is supplied is : ----------------------------->"+rcs);*/
-							 		
-							 		if (rcs.equalsIgnoreCase("England & Walescot")){
-								 			rcs = "England & Wales\\Scot";
-							 		} 
-							 		if (rcs.equalsIgnoreCase("England & Walescot & N Ire")){
-							 			rcs = "England & Wales\\Scot & N Ire";
-							 		}
-							 		if (rcs.equalsIgnoreCase("England & Walescot Ireire")){
-							 			rcs = "England & Wales\\Scot\\N Ire\\Eire";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nat ex Lonon Only")){
-							 			rcs = "Nat ex Lon\\Lon Only";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nat ex N Ire and Scot Ire Onlycot Only")){
-							 			rcs = "Nat ex N Ire and Scot\\N Ire Only\\Scot Only";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nat ex N Ire Ire Only")){
-							 			rcs = "Nat ex N Ire\\N Ire Only";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nat ex Scotcot Only")){
-							 			rcs = "Nat ex Scot\\Scot Only";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nthth")){
-							 			rcs = "Nth\\Sth";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nththcot")){
-							 			rcs = "Nth\\Sth\\Scot";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Nth ex Scotcot Only")){
-							 			rcs = "Nth ex Scot\\Scot Only";
-							 		}
-							 		if (rcs.equalsIgnoreCase("Sth ex Lonon Only")){
-							 			rcs = "Sth ex Lon\\Lon Only";
-							 		}
-							 		if (zoneType.equalsIgnoreCase("01. National") || zoneType.equalsIgnoreCase("02. North") || zoneType.equalsIgnoreCase("03. South"))
-							 		{
-								 		if (!" ".equals(rcs))
-								 		{
-								 			 waitFor(1).second();
-								 			 regionalCopySplit().selectByVisibleText(rcs);
-											 waitFor(2).seconds();
-								 		}	
-								 	}
-							 		String ABcopySplitValue = record.get("copySplit");
-							 		if (ABcopySplitValue.equalsIgnoreCase("Y"))
-							 		{
-							 			ABCopySplit().click();
-							 			waitFor(2).second();
-							 		}
-							 		productionNote().sendKeys(record.get("productionNote"));
-							 		waitFor(4).seconds();
-							 		productionNote().clear();
-							 		waitFor(1).seconds();
-							 		productionNote().sendKeys(record.get("productionNote"));
-									waitFor(1).seconds();
-					    	 Thucydides.takeScreenshot();
-		/************************************ Supply Price Details ******************************************/
-					    	 selectPrice().click();
-					    	 		waitFor(2).seconds();
-					    	 selectRevenue().sendKeys(record.get("revenue"));
-					    	 		waitFor(2).seconds();
-					    	 updateRevenue().click(); 
 					    	 		waitFor(5).seconds();
-					    	 Thucydides.takeScreenshot();	
+					    	 if (Package.equalsIgnoreCase("DM Display") || Package.equalsIgnoreCase("TMOS Display")) 
+							 {	 		
+					    		 			waitFor(2).seconds();
+									     selectPublication().selectByVisibleText(record.get("publication"));
+									    	 	waitFor(2).seconds();
+									     selectSection().selectByVisibleText(record.get("section"));
+									    	 	waitFor(4).seconds();
+									     selectZone().selectByVisibleText(record.get("zones"));
+									    	 	waitFor(4).seconds();
+									     selectSubSection().selectByVisibleText(record.get("subsection"));
+									    		waitFor(5).seconds();
+										 String colour = record.get("colour");	 	
+												 if (colour.equals("M"))
+												 {
+													 color().click();
+													 waitFor(3).seconds();
+												 }
+										String salesmodule = record.get("module");
+										
+										if (!"".equals(salesmodule))
+							    	 	{
+									     selectModule().selectByVisibleText(record.get("module"));
+										    	waitFor(4).seconds();
+							    	 	}
+										else
+										{
+											selectHeight().sendKeys(record.get("height"));
+											waitFor(4).seconds();
+											selectWidth().clear();
+											waitFor(2).seconds();
+											selectWidth().typeAndEnter(record.get("width"));
+											waitFor(4).seconds();
+										}
+										 String zoneType = record.get("zones");
+										 		    rcs = record.get("regionalCopySplit");
+										 		   /*rcs = rcs.replace('/', '\\');
+										 		   System.out.println("the values that is supplied is : ----------------------------->"+rcs);*/
+										 		
+										 		if (rcs.equalsIgnoreCase("England & Walescot")){
+											 			rcs = "England & Wales\\Scot";
+										 		} 
+										 		if (rcs.equalsIgnoreCase("England & Walescot & N Ire")){
+										 			rcs = "England & Wales\\Scot & N Ire";
+										 		}
+										 		if (rcs.equalsIgnoreCase("England & Walescot Ireire")){
+										 			rcs = "England & Wales\\Scot\\N Ire\\Eire";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nat ex Lonon Only")){
+										 			rcs = "Nat ex Lon\\Lon Only";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nat ex N Ire and Scot Ire Onlycot Only")){
+										 			rcs = "Nat ex N Ire and Scot\\N Ire Only\\Scot Only";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nat ex N Ire Ire Only")){
+										 			rcs = "Nat ex N Ire\\N Ire Only";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nat ex Scotcot Only")){
+										 			rcs = "Nat ex Scot\\Scot Only";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nthth")){
+										 			rcs = "Nth\\Sth";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nththcot")){
+										 			rcs = "Nth\\Sth\\Scot";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Nth ex Scotcot Only")){
+										 			rcs = "Nth ex Scot\\Scot Only";
+										 		}
+										 		if (rcs.equalsIgnoreCase("Sth ex Lonon Only")){
+										 			rcs = "Sth ex Lon\\Lon Only";
+										 		}
+										 		if (zoneType.equalsIgnoreCase("01. National") || zoneType.equalsIgnoreCase("02. North") || zoneType.equalsIgnoreCase("03. South"))
+										 		{
+											 		if (!" ".equals(rcs))
+											 		{
+											 			 waitFor(1).second();
+											 			 regionalCopySplit().selectByVisibleText(rcs);
+														 waitFor(2).seconds();
+											 		}	
+											 	}
+										 		String ABcopySplitValue = record.get("copySplit");
+										 		if (ABcopySplitValue.equalsIgnoreCase("Y"))
+										 		{
+										 			ABCopySplit().click();
+										 			waitFor(2).second();
+										 		}
+										 		productionNote().sendKeys(record.get("productionNote"));
+										 		waitFor(4).seconds();
+										 		productionNote().clear();
+										 		waitFor(1).seconds();
+										 		productionNote().sendKeys(record.get("productionNote"));
+												waitFor(1).seconds();
+								    	 Thucydides.takeScreenshot();
+							 }	 
+					    	 
+					    	 if (Package.equalsIgnoreCase("MailPlus")) {
+								 
+								 webSiteCategory().selectByVisibleText(record.get("websitecategory"));
+								 waitFor(2).seconds();
+								 webSite().selectByVisibleText(record.get("website"));
+								 waitFor(2).seconds();
+								 selectSection().selectByVisibleText(record.get("section"));
+						    	 waitFor(4).seconds();
+								 selectZone().selectByVisibleText(record.get("adunit"));
+								 waitFor(7).seconds();
+							 }
+							 
+							 if (Package.equalsIgnoreCase("Mail Display Inserts")) {
+								 
+								 title().selectByVisibleText(record.get("title"));
+								 selectPublication().selectByVisibleText(record.get("publication"));
+						    	 waitFor(2).seconds();
+						    	 distribution().selectByVisibleText(record.get("distribution"));
+						    	 waitFor(6).seconds();
+								 noOfInserts().type(record.get("numberOfInserts"));
+								 waitFor(1).seconds();
+							 }
+					    	 
+		/************************************ Supply Price Details ******************************************/
+							 if (Package.equalsIgnoreCase("DM Display") || Package.equalsIgnoreCase("TMOS Display")) 
+							 {
+									 selectPrice().click();
+							    	 		waitFor(2).seconds();
+							    	 selectRevenue().sendKeys(record.get("revenue"));
+							    	 		waitFor(2).seconds();
+							    	 updateRevenue().click(); 
+							    	 		waitFor(5).seconds();
+							    	 Thucydides.takeScreenshot();	
+							 }
+							 if (Package.equalsIgnoreCase("Mail Display Inserts")) {
+				    			 
+					    		 selectPrice().click();
+					    		 waitFor(3).seconds();
+					    		 selectInsertion().click();
+					    		 waitFor(1).seconds();
+					    		 insertionDateDMI().click();
+				    			 waitFor(2).seconds();
+				    			 selectBasePriceDMI().click();
+					    		 waitFor(1).seconds();
+					    		 supplyPriceType().selectByVisibleText("UserRevenue");
+					    		 waitFor(1).seconds();
+					    		 supplyPriceDMI().type(record.get("revenue"));
+					    		 waitFor(2).seconds();
+					    		 updateRevenueDMI().click();
+					    		 waitFor(4).seconds();
+					    	 }
 		/************************************ Accept Order *************************************************/	
 					    	 System.out.println("       " +rowNum + " . " + " Order ID : " +order );	
 					    	 acceptOrder().click();
@@ -404,14 +495,14 @@ public class DailyMailAccountPage extends PageObject {
 					    		 	try {
 								    	 WebElement prepaymentwindow1 = getDriver().switchTo().activeElement();
 								    	 		waitFor(1).second();
-//								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Prepay']")).click();
-								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Ignore']")).click();
+								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Prepay']")).click();
+//								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Ignore']")).click();
 								    	//input[@value='Ignore']
 								    	 		waitFor(3).seconds();
-								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Ignore']")).click();
-								    	 /*WebElement prepaymentwindow2 = getDriver().switchTo().activeElement();
+//								    	 prepaymentwindow1.findElement(By.xpath("//input[@value='Ignore']")).click();
+								    	 WebElement prepaymentwindow2 = getDriver().switchTo().activeElement();
 								    	 		waitFor(1).second(); 
-								    	 prepaymentwindow2.findElement(By.xpath("//input[@value='OK']")).click();*/
+								    	 prepaymentwindow2.findElement(By.xpath("//input[@value='OK']")).click();
 					    		 	} catch (Exception e) {}
 					    	 }
 					    	 waitFor(8).seconds();
