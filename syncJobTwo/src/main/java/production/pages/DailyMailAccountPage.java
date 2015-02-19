@@ -493,6 +493,25 @@ public class DailyMailAccountPage extends PageObject {
 					    		 waitFor(4).seconds();
 					    		 Thucydides.takeScreenshot();
 					    	 }
+							 if (Package.equalsIgnoreCase("MailPlus")) {
+								 
+								 selectPrice().click();
+					    		 waitFor(3).seconds();
+					    		 selectInsertion().click();
+					    		 waitFor(1).seconds();
+					    		 insertionDateMP().click();
+					    		 waitFor(1).seconds();
+					    		 selectBasePriceMP().click();
+					    		 waitFor(1).seconds();
+					    		 supplyPriceType().selectByVisibleText("UserRevenue");
+					    		 waitFor(1).seconds();
+					    		 supplyPriceMP().type(record.get("revenue"));
+					    		 waitFor(1).seconds();
+					    		 updateRevenueMP().click();
+					    		 waitFor(4).seconds();
+					    		 Thucydides.takeScreenshot();
+							 }
+							 
 		/************************************ Accept Order *************************************************/	
 					    	 System.out.println("       " +rowNum + " . " + " Order ID : " +order );	
 					    	 acceptOrder().click();
