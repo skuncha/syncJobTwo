@@ -30,7 +30,7 @@ public class DailyMailAccountPage extends PageObject {
 	long timeNow = System.currentTimeMillis();
 //	String url = "https://dmgsalescloud--systest.cs7.my.salesforce.com/";
 	
-	String url = "https://dmgsalescloud--devsales.cs14.my.salesforce.com/";
+	String url = "https://cs14.salesforce.com/";
 	
 		
 //	https://cs14.salesforce.com/
