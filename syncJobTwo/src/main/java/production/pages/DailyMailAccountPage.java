@@ -442,14 +442,14 @@ public class DailyMailAccountPage extends PageObject {
 					    	 
 					    	 if (Package.equalsIgnoreCase("MailPlus")) {
 								 
-								 webSiteCategory().selectByVisibleText(record.get("websitecategory"));
+//								 webSiteCategory().selectByVisibleText(record.get("websitecategory"));
 								 waitFor(2).seconds();
 								 webSite().selectByVisibleText(record.get("website"));
 								 waitFor(2).seconds();
 								 selectSection().selectByVisibleText(record.get("section"));
 						    	 waitFor(4).seconds();
 								 selectZone().selectByVisibleText(record.get("adunit"));
-								 waitFor(7).seconds();
+								 waitFor(8).seconds();
 							 }
 							 
 							 if (Package.equalsIgnoreCase("Mail Display Inserts")) {
@@ -477,7 +477,8 @@ public class DailyMailAccountPage extends PageObject {
 							 }
 							 if (Package.equalsIgnoreCase("Mail Display Inserts")) {
 				    			 
-					    		 selectPrice().click();
+								 waitFor(1).seconds();
+								 selectPrice().click();
 					    		 waitFor(3).seconds();
 					    		 selectInsertion().click();
 					    		 waitFor(1).seconds();
@@ -495,14 +496,15 @@ public class DailyMailAccountPage extends PageObject {
 					    	 }
 							 if (Package.equalsIgnoreCase("MailPlus")) {
 								 
+								 waitFor(1).seconds();
 								 selectPrice().click();
 					    		 waitFor(3).seconds();
 					    		 selectInsertion().click();
-					    		 waitFor(1).seconds();
+					    		 waitFor(2).seconds();
 					    		 insertionDateMP().click();
-					    		 waitFor(1).seconds();
+					    		 waitFor(2).seconds();
 					    		 selectBasePriceMP().click();
-					    		 waitFor(1).seconds();
+					    		 waitFor(2).seconds();
 					    		 supplyPriceType().selectByVisibleText("UserRevenue");
 					    		 waitFor(1).seconds();
 					    		 supplyPriceMP().type(record.get("revenue"));
