@@ -377,6 +377,10 @@ public class DailyMailAccountPage extends PageObject {
 											waitFor(2).seconds();
 											selectWidth().typeAndEnter(record.get("width"));
 											waitFor(4).seconds();
+											productionNote().sendKeys(record.get("productionNote"));
+									 		waitFor(4).seconds();
+									 		productionNote().clear();
+									 		waitFor(1).seconds();
 										}
 										 String zoneType = record.get("zones");
 										 		    rcs = record.get("regionalCopySplit");
@@ -432,10 +436,6 @@ public class DailyMailAccountPage extends PageObject {
 										 			waitFor(2).second();
 										 		}
 										 		productionNote().sendKeys(record.get("productionNote"));
-										 		waitFor(4).seconds();
-										 		productionNote().clear();
-										 		waitFor(1).seconds();
-										 		productionNote().sendKeys(record.get("productionNote"));
 												waitFor(1).seconds();
 								    	 Thucydides.takeScreenshot();
 							 }	 
@@ -449,7 +449,7 @@ public class DailyMailAccountPage extends PageObject {
 								 selectSection().selectByVisibleText(record.get("section"));
 						    	 waitFor(4).seconds();
 								 selectZone().selectByVisibleText(record.get("adunit"));
-								 waitFor(8).seconds();
+								 waitFor(12).seconds();
 							 }
 							 
 							 if (Package.equalsIgnoreCase("Mail Display Inserts")) {
