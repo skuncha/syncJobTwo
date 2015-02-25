@@ -422,7 +422,7 @@ public class DailyMailAccountPage extends PageObject {
 										 		}
 										 		if (zoneType.equalsIgnoreCase("01. National") || zoneType.equalsIgnoreCase("02. North") || zoneType.equalsIgnoreCase("03. South"))
 										 		{
-											 		if (!" ".equals(rcs))
+											 		if (!"".equals(rcs))
 											 		{
 											 			 waitFor(1).second();
 											 			 regionalCopySplit().selectByVisibleText(rcs);
