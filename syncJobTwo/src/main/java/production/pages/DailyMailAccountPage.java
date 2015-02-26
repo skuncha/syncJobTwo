@@ -263,9 +263,6 @@ public class DailyMailAccountPage extends PageObject {
 											}
 								 }
 										waitFor(2).seconds();
-										
-											
-									
 								/*try
 								{	
 									searchContact().type(record.get("customerContact"));
@@ -286,7 +283,8 @@ public class DailyMailAccountPage extends PageObject {
 							finish().click();
 							
 		/************** Launch OrderPlugin and Create Order*************************************************/	
-							 	 waitFor(13).seconds();
+							 	
+								 waitFor(13).seconds();
 					     	 	 String sourceURL =getDriver().findElement(By.xpath("//*[@id='j_id0:j_id8']/div[2]/iframe")).getAttribute("src");
 					     	 	 String[] firstsplit = sourceURL.split("authorizationcode=");
 					     	 	 String[] secondpartsplit = firstsplit[1].split("\\&clientid=");
