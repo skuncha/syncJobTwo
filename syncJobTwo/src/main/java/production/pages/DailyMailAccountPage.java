@@ -105,13 +105,13 @@ public class DailyMailAccountPage extends PageObject {
     /******     MAILPLUS      *****/
     private WebElementFacade insertionDateMP()   { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/table/thead/tr/th[1]/a"));			}
     private WebElementFacade selectBasePriceMP() { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/div/table/tbody/tr[9]/td[1]/a"));	}
-    private WebElementFacade supplyPriceMP()	 { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/div/table/tbody/tr[19]/td[3]/div/input"));	}
-    private WebElementFacade updateRevenueMP()   { return element(By.xpath("//tbody/tr[19]/td[3]/div/span/button/i"));							    }
+    private WebElementFacade supplyPriceMP()	 { return element(By.xpath("//fieldset/div[2]/div/div/div[2]/div/div/table/tbody/tr[18]/td[3]/div/input"));	}
+    private WebElementFacade updateRevenueMP()   { return element(By.xpath("//tbody/tr[18]/td[3]/div/span/button/i"));							    }
     /******DAILY MAIL INSERTS*****/
     private WebElementFacade insertionDateDMI()  { return element(By.xpath("//fieldset/div[2]/div/div/div[3]/div/table/thead/tr/th[1]/a"));		    }
     private WebElementFacade selectBasePriceDMI(){ return element(By.xpath("//fieldset/div[2]/div/div/div[3]/div/div/table/tbody/tr[10]/td[1]/a"));	}
-    private WebElementFacade supplyPriceDMI()	 { return element(By.xpath("//tbody/tr[3]/td[3]/div/input"));										}
-    private WebElementFacade updateRevenueDMI()  { return element(By.xpath("//tbody/tr[3]/td[3]/div/span/button/i"));							    }
+    private WebElementFacade supplyPriceDMI()	 { return element(By.xpath("//tbody/tr[19]/td[3]/div/input"));										}
+    private WebElementFacade updateRevenueDMI()  { return element(By.xpath("//tbody/tr[19]/td[3]/div/span/button/i"));							    }
     /******Order level Price *****/
    
     public void supplyLogin_Credientials(String username, String password) {
