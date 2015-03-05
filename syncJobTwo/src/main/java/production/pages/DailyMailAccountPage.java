@@ -324,6 +324,7 @@ public class DailyMailAccountPage extends PageObject {
 					    	 orderPurchaseNo().sendKeys(record.get("PONumber"));
 					    	 orderNote().sendKeys(record.get("orderNote"));
 					    	 orderUrgentNote().sendKeys(record.get("urgentNote"));
+					    	 waitFor(1).seconds();
 					    	 orderStatus().selectByVisibleText(record.get("orderStatus"));
 					    	 String salesrep = record.get("salesPerson");	
 					    	 	if (!" ".equals(salesrep))
