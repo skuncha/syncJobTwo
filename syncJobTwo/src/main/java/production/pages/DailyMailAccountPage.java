@@ -21,8 +21,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  *
  */
 
-//@DefaultUrl("http://test.salesforce.com")
-
 @DefaultUrl("https://test.salesforce.com/")
 
 public class DailyMailAccountPage extends PageObject {
