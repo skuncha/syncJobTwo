@@ -456,7 +456,7 @@ public class DailyMailAccountPage extends PageObject {
 								 title().selectByVisibleText(record.get("title"));
 								 selectPublication().selectByVisibleText(record.get("publication"));
 						    	 waitFor(2).seconds();
-						    	 distribution().selectByVisibleText(record.get("distribution"));
+					    	 distribution().selectByVisibleText(record.get("distribution"));
 						    	 waitFor(6).seconds();
 								 noOfInserts().typeAndTab(record.get("numberOfInserts"));
 								 waitFor(3).seconds();
