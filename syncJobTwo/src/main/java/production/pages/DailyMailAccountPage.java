@@ -82,7 +82,6 @@ public class DailyMailAccountPage extends PageObject {
     private WebElementFacade productionNote()   	{ return element(By.id("Order.Schedule.Material:material.productionNote"));						}
     private WebElementFacade ABCopySplit()			{ return element(By.id(":propval.propertyBoolValue"));											}
     private WebElementFacade regionalCopySplit()   	{ return element(By.id("Order.Properties:Regional Copy Split"));								}
-//    private WebElementFacade spreadAd()   			{ return element(By.id("Order.Schedule.Material:material.isSpreadAd"));							}
     private WebElementFacade color()   				{ return element(By.id("Order.Schedule.Material:material.bookedCMYKColors"));					}
     private WebElementFacade pageRequest()   		{ return element(By.id("Order.Schedule:schedule.pageRequest"));									}
     private WebElementFacade nextMonth()   	 	 	{ return element(By.xpath("//thead/tr[1]/th/span[4]/span[3]/i"));								}
@@ -352,7 +351,7 @@ public class DailyMailAccountPage extends PageObject {
 									     selectZone().selectByVisibleText(record.get("zones"));
 									    	 	waitFor(4).seconds();
 									     selectSubSection().selectByVisibleText(record.get("subsection"));
-									    		waitFor(5).seconds();
+									    		waitFor(3).seconds();
 										 String colour = record.get("colour");	 	
 												 if (colour.equals("M"))
 												 {
