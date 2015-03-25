@@ -293,6 +293,7 @@ public class DailyMailAccountPage extends PageObject {
 								 String redirectTMOS = "&bookings=[{\"packagename\":\"TMOS Display\",\"dates\":[\""+ date + "\"]}]";
 								 String redirectMDI = "&bookings=[{\"packagename\":\"Mail Display Inserts\",\"dates\":[\""+ date + "\"]}]";
 								 String redirectMP = "&bookings=[{\"packagename\":\"MailPlus\",\"dates\":[\""+ date + "\"]}]";
+								 
 								 String Package = record.get("package");
 								 
 								 if(Package.equalsIgnoreCase("DM Display"))
@@ -351,7 +352,7 @@ public class DailyMailAccountPage extends PageObject {
 									     selectZone().selectByVisibleText(record.get("zones"));
 									    	 	waitFor(4).seconds();
 									     selectSubSection().selectByVisibleText(record.get("subsection"));
-									    		waitFor(3).seconds();
+									    		waitFor(4).seconds();
 										 String colour = record.get("colour");	 	
 												 if (colour.equals("M"))
 												 {
@@ -375,8 +376,8 @@ public class DailyMailAccountPage extends PageObject {
 											waitFor(4).seconds();
 											productionNote().sendKeys(record.get("productionNote"));
 									 		waitFor(4).seconds();
-									 		productionNote().clear();
-									 		waitFor(1).seconds();
+									 		/*productionNote().clear();
+									 		waitFor(1).seconds();*/
 										}
 										 String zoneType = record.get("zones");
 										 		    rcs = record.get("regionalCopySplit");
