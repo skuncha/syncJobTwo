@@ -77,7 +77,7 @@ public class DailyMailAccountPage extends PageObject {
     private WebElementFacade selectZone()   	 	{ return element(By.id("Order.Schedule:"));														}
     private WebElementFacade distribution()   	 	{ return element(By.id("Order.Schedule:sched.distributionCode"));								}
     private WebElementFacade noOfInserts()   	 	{ return element(By.id("Order.Schedule:sched.noOfInserts"));									}
-//    private WebElementFacade saveOrder()   	     	{ return element(By.xpath("//nav[button='Save']/button[2]"));									}
+//    private WebElementFacade saveOrder()   	    { return element(By.xpath("//nav[button='Save']/button[2]"));									}
     private WebElementFacade selectModule()   	 	{ return element(By.id("Order.Schedule.Material:material.moduleCode"));							}
     private WebElementFacade productionNote()   	{ return element(By.id("Order.Schedule.Material:material.productionNote"));						}
     private WebElementFacade ABCopySplit()			{ return element(By.id(":propval.propertyBoolValue"));											}
@@ -141,7 +141,6 @@ public class DailyMailAccountPage extends PageObject {
 							String clientURL = url.concat(clinetuniqueID);
 							/*System.out.println("client URL is -------- :  "+clientURL);*/
 							getDriver().get(clientURL);
-							waitFor(1).seconds();
 							try {
 						    	 WebDriverWait wait1 = new WebDriverWait(getDriver(), 3);
 						    	 if(wait1.until(ExpectedConditions.alertIsPresent())!=null)
@@ -536,13 +535,14 @@ public class DailyMailAccountPage extends PageObject {
 						{
 									System.out.println("       " +rowNum + " ---> " + "Sorry! either DATA/Latency issue please check test report for details" );
 									Thucydides.takeScreenshot();
-						try {
-					    	 WebDriverWait wait1 = new WebDriverWait(getDriver(), 3);
-					    	 if(wait1.until(ExpectedConditions.alertIsPresent())!=null)
-					    	      getDriver().switchTo().alert().accept();
-					    	 }
-					    	 catch (Exception x) {}
-				} }
+									try {
+								    	 WebDriverWait wait1 = new WebDriverWait(getDriver(), 3);
+								    	 if(wait1.until(ExpectedConditions.alertIsPresent())!=null)
+								    	      getDriver().switchTo().alert().accept();
+								    	 }
+								    	 catch (Exception x) {}
+						} 
+			}
 	}		
 }
 }
